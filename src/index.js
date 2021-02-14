@@ -2,7 +2,7 @@ function getCost(elem, goal) {
 	return Math.sqrt(Math.pow(elem.x - goal.x, 2) + Math.pow(elem.y - goal.y, 2));
 }
 
-export const takeStep = (start, goal, stages, queue, walls, maxX, minX, maxY, minY) => {
+export const takeStep = (start, goal, stages, queue, walls, minX, minY, maxX, maxY) => {
 	const newStages = [...stages];
 	let success = false;
 	const newQueue = [...queue];
@@ -83,7 +83,7 @@ export const takeStep = (start, goal, stages, queue, walls, maxX, minX, maxY, mi
 	};
 }
 
-export function runAstar(start, goal, walls, maxX, minX, maxY, minY) {
+export function runAstar(start, goal, walls, minX, minY, maxX, maxY) {
 	let keepGoing = true;
 	let stages = [];
 	let queue = [];
@@ -94,7 +94,7 @@ export function runAstar(start, goal, walls, maxX, minX, maxY, minY) {
 			stages: newStages,
 			queue: newQueue,
 			path,
-		} = takeStep(start, goal, stages, queue, walls, maxX, minX, maxY, minY);
+		} = takeStep(start, goal, stages, queue, walls, minX, minY, maxX, maxY);
 		keepGoing = !finished;
 		
 		stages = newStages;
@@ -111,8 +111,8 @@ export function runAstar(start, goal, walls, maxX, minX, maxY, minY) {
 	}
 }
 
-export function astar(start, goal, walls, maxX, minX, maxY, minY) {
-	const { success, path } = runAstar(start, goal, walls, maxX, minX, maxY, minY);
+export function astar(start, goal, walls, minX, minY, maxX, maxY) {
+	const { success, path } = runAstar(start, goal, walls, minX, minY, maxX, maxY);
 	
 	if (success) {
 		return path;

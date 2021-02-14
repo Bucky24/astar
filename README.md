@@ -11,7 +11,7 @@ The `takeStep` method takes in the data for an in-progress astar run and takes t
 #### Inputs
 
 ```
-takeStep(start, goal, stages, queue, walls, maxX, minX, maxY, minY)
+takeStep(start, goal, stages, queue, walls, minX, minY, maxX, maxY)
 ```
 
 | Name | Type | Description |
@@ -20,9 +20,9 @@ takeStep(start, goal, stages, queue, walls, maxX, minX, maxY, minY)
 | goal | Node | The goal of the search |
 | stages | StageNode[] | List of areas that have been examined |
 | queue | QueueNode[] | List of areas that have yet to be scanned |
-| maxX | Integer | The largest x coord to generate pathing for |
 | minX | Integer | The smallest x coord to generate pathing for |
 | maxY | Integer | The largest y coord to generate pathing for |
+| maxX | Integer | The largest x coord to generate pathing for |
 | minY | Integer | The smallest y coord to generate pathing for |
 
 #### Outputs
@@ -44,16 +44,16 @@ This method takes in data about the world, then runs a full astar algorithm on i
 #### Inputs
 
 ```
-runAstar(start, goal, walls, maxX, minX, maxY, minY)
+runAstar(start, goal, walls, minX, minY, maxX, maxY)
 ```
 
 | Name | Type | Description |
 |-----|-----|-----|
 | start | Node | The start of the path |
 | goal | Node | The goal of the search |
-| maxX | Integer | The largest x coord to generate pathing for |
 | minX | Integer | The smallest x coord to generate pathing for |
 | maxY | Integer | The largest y coord to generate pathing for |
+| maxX | Integer | The largest x coord to generate pathing for |
 | minY | Integer | The smallest y coord to generate pathing for |
 
 #### Outputs
@@ -75,16 +75,16 @@ This method takes in the same data as `runAstar`, but returns only the path data
 #### Inputs
 
 ```
-astar(start, goal, walls, maxX, minX, maxY, minY)
+astar(start, goal, walls, minX, minY, maxX, maxY)
 ```
 
 | Name | Type | Description |
 |-----|-----|-----|
 | start | Node | The start of the path |
 | goal | Node | The goal of the search |
-| maxX | Integer | The largest x coord to generate pathing for |
 | minX | Integer | The smallest x coord to generate pathing for |
 | maxY | Integer | The largest y coord to generate pathing for |
+| maxX | Integer | The largest x coord to generate pathing for |
 | minY | Integer | The smallest y coord to generate pathing for |
 
 #### Outputs

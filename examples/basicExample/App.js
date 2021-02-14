@@ -190,7 +190,7 @@ export default function App() {
 			<button
 				onClick={() => {
 					const { success, finished, stages: newStages, queue: newQueue, path } = takeStep(
-						start, end, stages, queue, walls, CELL_COUNT, 0, CELL_COUNT, 0,
+						start, end, stages, queue, walls, 0, 0, CELL_COUNT, CELL_COUNT,
 					);
 					setStages(newStages);
 					setQueue(newQueue);
@@ -207,7 +207,7 @@ export default function App() {
 			<button
 				onClick={() => {
 					const { success, path, stages: newStages, queue: newQueue } = runAstar(
-						start, end, walls, CELL_COUNT, 0, CELL_COUNT, 0,
+						start, end, walls, 0, 0, CELL_COUNT, CELL_COUNT,
 					);
 					setStages(newStages);
 					setQueue(newQueue);
