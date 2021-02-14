@@ -45,12 +45,13 @@ export const takeStep = (start, goal, stages, queue, walls, minX, minY, maxX, ma
 	const newTrail = [...smallest.trail, {x: smallest.x, y: smallest.y}];
 	
 	if (smallest.x === goal.x && smallest.y === goal.y) {
+		// the path goes from goal to start now. Probably better if it was reversed.
 		return {
 			finished: true,
 			success: true,
 			stages: newStages,
 			queue: newQueue,
-			path: newTrail,
+			path: newTrail.reverse(),
 		};
 	}
 	
