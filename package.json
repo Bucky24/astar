@@ -2,13 +2,13 @@
   "name": "@bucky24/astar",
   "version": "0.1.3",
   "description": "",
-  "main": "build/index.js",
+  "main": "src/index.js",
   "scripts": {
     "build": "babel ./src --out-dir ./build",
     "basicExample": "webpack serve --config ./examples/basicExample/webpack.config.js"
   },
   "files": [
-    "build"
+    "src"
   ],
   "author": "Bucky24",
   "license": "MIT",
